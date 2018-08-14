@@ -30,6 +30,11 @@ function fish_prompt
   # Add a newline before new prompts
   echo -e ''
 
+  # Show hostname if connected via SSH
+  if [ -n "$SSH_CLIENT" ]
+  	  echo -n -s $cyan (hostname) $normal ' · '
+  end
+
   # Display [venvname] if in a virtualenv
   if set -q VIRTUAL_ENV
       echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
