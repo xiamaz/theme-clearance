@@ -31,7 +31,7 @@ function fish_prompt
   echo -e ''
 
   # Show hostname if connected via SSH
-  if [ -n "$SSH_CLIENT" ]
+  if [ -n "$SSH_CONNECTION" ]
   	  echo -n -s $cyan (hostname) $normal ' · '
   end
 
